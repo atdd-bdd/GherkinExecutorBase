@@ -2,7 +2,24 @@
 
 Gherkin Executor translates Gherkin feature files into tests using the test framework of the native language.   The Gherkin feature files represent the detailed external behavior of an application and serve as a collaborative tool as well as executable documentation.    
 
-These feature files have a different syntax than standard Gherkin feature files.  They include information on the data types of the columns in step tables, which helps to emphasize the domain terms and their relationships in an application.    
+These feature files have a different syntax than standard Gherkin feature files.  They include information on the data types of the columns in step tables, which helps to emphasize the domain terms and their relationships in an application.   Here is a brief example of temperature conversion: 
+
+```
+Scenario: Temperature Conversion
+Calculation Convert F to C             # ListOfObject FandC
+| F    | C    | Notes       |
+| 32   | 0    | Freezing    |
+| 212  | 100  | Boiling     |
+| -40  | -40  | Below zero  |
+
+Data FandC
+| Name   | Default  | DataType  | Notes  |
+| F      | 0        | Integer   |        |
+| C      | 0        | Integer   |        |
+| Notes  |          | Text      |        |
+```
+
+The Data statement declares the domain types of each of the columns in the scenario step.   The Integer describes that the values must be integers, rather than numbers with decimal points.   If you use abstract data types, they could be of type `Temperature`
 
 Gherkin Executor creates a set of files from the feature file.   One is the unit test file which consists of a separate unit test for each scenario.    The second is the glue file, which is called by the unit test file and passed the data for each step.   The developer alters the glue file to call the production code.    Additionally, separate files are created for the data elements 
 
@@ -41,8 +58,6 @@ The detatiled documentation includes some examples of an implementation in Java 
 
 - [Domain Driven Design and Gherkin Executor - YouTube](https://www.youtube.com/watch?v=N4J3L_KEQeU)
 
-### 
-
 ### Example of Domain Terms with Gherkin Executor
 
 Eric Evans has a model for shipping shown in Chapter Nine: Making Implicit Concepts Explicit of' Domain-Driven Design: Tackling Complexity in the Heart of Software.  (https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/). 
@@ -67,10 +82,10 @@ And legs are # ListOfObject Leg
 
 Scenario:  Domain Term Location 
 * These are examples of IDs for each port 
-| ID     | City       | Country      |
-| SGSIN  | Singapore  | Singapore    |
-| EGPSD  | Text       | Egypt        |
-| NLRTM  | Rotterdam  | Netherlands  |
+| ID     | City               | Country      |
+| SGSIN  | Port of Singapore  | Singapore    |
+| EGPSD  | Port Said          | Egypt        |
+| NLRTM  | Port of Rotterdam  | Netherlands  |
 
 Data Leg 
 | Name       | Default | DataType | Notes |

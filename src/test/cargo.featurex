@@ -1,0 +1,52 @@
+Feature: Shipping 
+
+Scenario: Cargo has an Itinerary    
+Given cargo is:                                 # ListOfObject Cargo 
+| ID  | Origin | Destination | Weight |
+| 234 | SGSIN  | NLRTM       | 2000   |
+When itinerary request is made 
+Then itineary produced:   # ListOfObject Itinerary
+| Origin | Destination | Arrival Time     |
+| SGSIN  | NLRTM       | 2025-07-22T14:30 |
+And legs are # ListOfObject Leg
+| Vessel      | load  | LoadTime         | unload | unloadTime       | 
+| IMO 9319466 | SGSIN | 2025-07-13T02:30 | EGPSD  | 2025-07-18T02:30 | 
+| IMO 3234345 | EGPSD | 2025-07-18T14:30 | NLRTM  | 2025-07-22T14:30 | 
+
+Scenario:  Domain Term Location 
+* These are examples of IDs for each port 
+| ID     | City               | Country      |
+| SGSIN  | Port of Singapore  | Singapore    |
+| EGPSD  | Port Said          | Egypt        |
+| NLRTM  | Port of Rotterdam  | Netherlands  |
+
+Data Leg 
+| Name       | Default | DataType | Notes |
+| vessel     |         | VesselID |       |
+| load       |         | Location |       |
+| loadTime   |         | DateTime |       |
+| unload     |         | Location |       |
+| unloadTime |         | DateTime |       |
+
+
+Data Itinerary 
+| Name         | Default | DataType | Notes |
+| Origin       |         | Location |       |
+| Destination  |         | Location |       |
+| Arrival Time |         | DateTime |       |
+
+Data  Cargo 
+| Name        | Default | DataType   | Notes |
+| Cargo       |         | CargoID    |       |
+| Origin      |         | Location   |       |
+| Destination |         | Location   |       |
+| Weight      |         | Pounds     |       |
+
+Data Location 
+| Name     | Default  | DataType     | Notes                       |
+| ID       |          | LocationID   |                             |
+| City     |          | Text         | Includes state or province  |
+| Country  |          | Country      |                             |
+
+ 
+
