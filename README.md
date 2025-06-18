@@ -1,4 +1,4 @@
-# Gherkin Executor  Base
+# Gherkin Executor 
 
 Gherkin Executor translates Gherkin feature files into tests using the test framework of the native language.   The Gherkin feature files represent the detailed external behavior of an application and serve as a collaborative tool as well as executable documentation.    
 
