@@ -1,0 +1,79 @@
+# Gherkin Executor  Base
+
+Gherkin Executor translates Gherkin feature files into tests using the test framework of the native language.   The Gherkin feature files represent the detailed external behavior of an application and serve as a collaborative tool as well as executable documentation.    
+
+These feature files have a different syntax than standard Gherkin feature files.  They include information on the data types of the columns in step tables, which helps to emphasize the domain terms and their relationships in an application.    
+
+Gherkin Executor creates a set of files from the feature file.   One is the unit test file which consists of a separate unit test for each scenario.    The second is the glue file, which is called by the unit test file and passed the data for each step.   The developer alters the glue file to call the production code.    Additionally, separate files are created for the data elements 
+
+The base documentation and examples is in this repository.   Separate repositories exist for each language that Gherkin Executor has been ported to: 
+
+[GitHub - atdd-bdd/GherkinExecutorForJava: Gherkin Executor for Java translates Gherkin files into unit tests](https://github.com/atdd-bdd/GherkinExecutorForJava)
+
+[GitHub - atdd-bdd/GherkinExecutorForCSharp](https://github.com/atdd-bdd/GherkinExecutorForCSharp)
+
+[GitHub - atdd-bdd/GherkinExecutorForPython](https://github.com/atdd-bdd/GherkinExecutorForPython)
+
+Next up is C++.    
+
+The detatiled documentation includes some examples of an implementation in Java just to demonstrate the flow.   The individual language repositories have the examples in each project that show the implementation in the particular language.   
+
+Eric Evans has a model for shipping shown in Chapter Nine: Making Implicit Concepts Explicit of' Domain-Driven Design: Tackling Complexity in the Heart of Software.  (https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/). 
+
+Following is a feature file that documents part of that model - the creation of an itinerary for a cargo ship.    As you can see, the domain terms (e.g. origin) and domain data types (e.g. Location) are shown in the file.   One might begin with this and then add 
+
+```
+Feature: Shipping 
+
+Scenario: Cargo has an Itinerary    
+Given cargo is:                                 # ListOfObject Cargo 
+| ID  | Origin | Destination | Weight |
+| 234 | SGSIN  | NLRTM       | 2000   |
+When itinerary request is made 
+Then itineary produced:   # ListOfObject Itinerary
+| Origin | Destination | Arrival Time     |
+| SGSIN  | NLRTM       | 2025-07-22T14:30 |
+And legs are # ListOfObject Leg
+| Vessel      | load  | LoadTime         | unload | unloadTime       | 
+| IMO 9319466 | SGSIN | 2025-07-13T02:30 | EGPSD  | 2025-07-18T02:30 | 
+| IMO 3234345 | EGPSD | 2025-07-18T14:30 | NLRTM  | 2025-07-22T14:30 | 
+
+Scenario:  Domain Term Location 
+* These are examples of IDs for each port 
+| ID     | City       | Country      |
+| SGSIN  | Singapore  | Singapore    |
+| EGPSD  | Text       | Egypt        |
+| NLRTM  | Rotterdam  | Netherlands  |
+
+Data Leg 
+| Name       | Default | DataType | Notes |
+| vessel     |         | VesselID |       |
+| load       |         | Location |       |
+| loadTime   |         | DateTime |       |
+| unload     |         | Location |       |
+| unloadTime |         | DateTime |       |
+
+
+Data Itinerary 
+| Name         | Default | DataType | Notes |
+| Origin       |         | Location |       |
+| Destination  |         | Location |       |
+| Arrival Time |         | DateTime |       |
+
+Data  Cargo 
+| Name        | Default | DataType   | Notes |
+| Cargo       |         | CargoID    |       |
+| Origin      |         | Location   |       |
+| Destination |         | Location   |       |
+| Weight      |         | Pounds     |       |
+
+Data Location 
+| Name     | Default  | DataType     | Notes                       |
+| ID       |          | LocationID   |                             |
+| City     |          | Text         | Includes state or province  |
+| Country  |          | Country      |                             |
+
+
+
+
+```
