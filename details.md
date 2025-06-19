@@ -285,6 +285,22 @@ Given this data # ListOfObject MyDataClass
 | [ab]       | SUNDAY     | abc          |
 ```
 
+#### An Alternative To Import
+
+ You could create a class whose constructor takes a string  and which has a method that calls the class without a stringconstructor. For example 
+
+```
+class PatternConnector {}
+    String value;
+    public PatternConnector(String value){
+    this.value = value; 
+    }
+    Pattern getPattern() {
+    return Pattern.compile(value); 
+    }
+}
+```
+
 ## Include Statement
 
 You can include another file in a feature file.  If the file is a `.csv` file, it will be converted to a table.   
@@ -577,6 +593,24 @@ Given this data:
 This is useful if the Define terms are meaningful to someone reading 
 the feature file. 
 
+#### Another Use for Define
+
+There is another use for Define. You can use it for long strings that are used in tables.    Here's an example
+
+```
+ Define 
+| Name        | Value                                                                       | 
+| LONG_STRING | This is a long string that would make a table really wide and hard to read  |
+| LONG_STING2 | Another really long string that would make everything have to scroll        |
+```
+
+```
+| One Valu    |  Two Value   | 
+| LONG_STRING | LONG_STRING2 |
+```
+
+#### 
+
 ### Calculated Values
 
 You can use an expression in the replacement, such as:
@@ -611,5 +645,43 @@ Of this calculation. Suppose it was called ComputeInt with a string constructor.
 Field. 
 
 For Java, you can check out the ScriptEngineManager and ScriptEngine classes from the `javax.script` package:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
