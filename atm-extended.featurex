@@ -1,0 +1,59 @@
+Feature: [Title]
+
+Scenario: [Title]
+Given
+When
+Then
+Scenario: Account has sufficient funds
+Given the account balance is $100
+And the card is valid
+And the machine contains enough money
+When the Account Holder requests $20
+Then the ATM should dispense $20
+And the account balance should be $80
+And the card should be returned
+
+Scenario:  Validate card 
+Given user has an ATM card registered for these accounts
+| Account ID | Type | 
+| 1234 | Checking | 
+| 4567 | Savings | 
+And a pin
+| 1111 |
+When the user inserts the card and enters the pin 
+| 1111 |
+Then the card is validated
+
+
+Scenario: Account has sufficient funds
+Given accounts are:                      # ListOfObject Account
+| Account ID | Type | Available Balance | 
+| 1234 | Checking | $100 |
+| 4567 | Savings | $200| 
+And the card is validated # What does this mean - the previous scenario 
+And machine contains
+| Twentys |  Hundreds |
+| 1       |  2        |
+When the Account Holder requests a withdrawal
+| Amount | Account ID |
+| $20    | 1234        | 
+Then the ATM should dispense 
+| Twenties |
+| 1 | 
+And accounts should now be:
+| Account ID | Type | Available Balance | 
+| 1234 | Checking | $80 |
+| 4567 | Savings | $200| 
+And a transaction is recorded                  # This is another output / state change
+| Account ID | Type | Amount | Location | 
+| 1234 | Withdrawal | $20 | West Main, Durham, NC | 
+
+Scenario:  Return Card 
+
+
+
+
+
+
+
+
