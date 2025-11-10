@@ -43,19 +43,22 @@ The detatiled documentation includes some examples of an implementation in Java 
 
 ## Information
 
-* [Overview.md](https://github.com/atdd-bdd/GherkinExecutorBase/blob/main/Overview.md) - This gives an overview of Gherkin Executor and how it flows.  
+- [Overview.md](https://github.com/atdd-bdd/GherkinExecutorBase/blob/main/Overview.md) - This gives an overview of Gherkin Executor and how it flows.  
 
-* [Detail.md](https://github.com/atdd-bdd/GherkinExecutorBase/blob/main/details.md) - This has details the Data, Import, and Define statements, as well as on tables and multi-line strings,
+- [Detail.md](https://github.com/atdd-bdd/GherkinExecutorBase/blob/main/details.md) - This has details the Data, Import, and Define statements, as well as on tables and multi-line strings,
 
-* [Examples.md](https://github.com/atdd-bdd/GherkinExecutorBase/blob/main/examples.md) - More detail on the examples.  
+- [Examples.md](https://github.com/atdd-bdd/GherkinExecutorBase/blob/main/examples.md) - More detail on the examples.  
 
-* [Design.md](https://github.com/atdd-bdd/GherkinExecutorBase/blob/main/design.md) – the approach taken as well as maintenance notes  
+- [Design.md](https://github.com/atdd-bdd/GherkinExecutorBase/blob/main/design.md) – the approach taken as well as maintenance notes  
 
-* [Other.md](https://github.com/atdd-bdd/GherkinExecutorBase/blob/main/other.md) – stuff that just does not seem to fit elsewhere  
+- [Other.md](https://github.com/atdd-bdd/GherkinExecutorBase/blob/main/other.md) – stuff that just does not seem to fit elsewhere  
 
-* [Style.md](https://github.com/atdd-bdd/GherkinExecutorBase/blob/main/style.md) – some thoughts on how to organize your feature files
+- [Style.md](https://github.com/atdd-bdd/GherkinExecutorBase/blob/main/style.md) – some thoughts on how to organize your feature files
+
+- [GherkinExecutorBase/why gherkin executor.md at main · atdd-bdd/GherkinExecutorBase · GitHub](https://github.com/atdd-bdd/GherkinExecutorBase/blob/main/why%20gherkin%20executor.md) - why Gherkin Executor was created
   
   #### Videos
+
 - [Behavior Driven Development with Gherkin Executor - YouTube](https://www.youtube.com/watch?v=OYALWe8X1yY)  
 
 - [Setup of Gherkin Executor - YouTube](https://www.youtube.com/watch?v=uH9CgctrGgk)  
@@ -124,5 +127,3 @@ Data Location
 ```
 
 # 
-
-

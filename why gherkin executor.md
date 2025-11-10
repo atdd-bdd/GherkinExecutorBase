@@ -14,8 +14,6 @@ Each scenario is transformed into a native unit test (e.g. gtest for C++, pytest
 
 Here is a simple example to show how Gherkin Executor transforms a scenario with step tables. 
 
-
-
 ```
 Scenario: Temperature Conversion
 # Could use *  Calculation
@@ -33,7 +31,7 @@ Data FandC
 
 ```
 
-The ``# ListOfObject FandC` in the `Calculation `step links to the` Data FandC`statement.  A class called FandC with three string attributes will be created, along with a class called FandCInternal with two `int `and one `sstring` attributes.   These data types can be any user-defined class.   
+The # ListOfObject FandC in the Calculation step links to the` Data FandC` statement.  A class called` FandC` with three string attributes will be created, along with a class called FandCInternal with two int and one sstring attributes.   These data types can be any user-defined class.   `
 
 Gherkin Executor reads this file and creates a test file.  This example is for C++, other languages are similar.  `TEST_F` denotes a unit test in `gtest`.
 
