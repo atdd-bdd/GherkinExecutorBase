@@ -39,7 +39,7 @@ Each repository has the examples in the appropriate language, except for C++.   
 
 [GitHub - atdd-bdd/TestsForGherkinExecutorForCPP](https://github.com/atdd-bdd/TestsForGherkinExecutorForCPP)
 
-The detatiled documentation includes some examples of an implementation in Java just to demonstrate the flow.   The individual language repositories have the examples in each project that show the implementation in the particular language. 
+The detaiiled documentation includes some examples of an implementation in Java just to demonstrate the flow.   The individual language repositories have the examples in each project that show the implementation in the particular language. 
 
 ## Information
 

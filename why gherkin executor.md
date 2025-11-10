@@ -91,8 +91,10 @@ Given I have
 
 ```
 
-
-
 Note that the domain term ("Quantity") is present in the table-only version 
+
+#### How
+
+I created a version in Kotlin as a project to learn Kotlin.  I used Copilot to convert Kotlin to Java.  After adding some additional features, I again used Copilot to convert it to C# and Python.  It was growing large, so I used Claude to make the C++ version.    
 
 
