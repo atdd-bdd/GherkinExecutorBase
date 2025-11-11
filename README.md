@@ -67,6 +67,14 @@ The detaiiled documentation includes some examples of an implementation in Java 
 
 - [Domain Driven Design and Gherkin Executor - YouTube](https://www.youtube.com/watch?v=N4J3L_KEQeU)
 
+#### Gherkin Editor
+
+There is an editor that runs on Windows to edit extended Gherkin files.  It features a spreadsheet-like dialog for editing tables.   
+
+See [Release Initial Release · atdd-bdd/GherkinEditor2.1 · GitHub](https://github.com/atdd-bdd/GherkinEditor2.1/releases/tag/V1.0.1)
+
+
+
 ### Example of Domain Terms with Gherkin Executor
 
 Eric Evans has a model for shipping shown in Chapter Nine: Making Implicit Concepts Explicit of' Domain-Driven Design: Tackling Complexity in the Heart of Software.  (https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/). 
