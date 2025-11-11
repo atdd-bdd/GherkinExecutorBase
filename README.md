@@ -71,7 +71,7 @@ The detaiiled documentation includes some examples of an implementation in Java 
 
 There is an editor that runs on Windows to edit extended Gherkin files.  It features a spreadsheet-like dialog for editing tables.   
 
-See [Release Initial Release · atdd-bdd/GherkinEditor2.1 · GitHub](https://github.com/atdd-bdd/GherkinEditor2.1/releases/tag/V1.0.1)
+See [Release Initial Release · atdd-bdd/GherkinEditor · GitHub](https://github.com/atdd-bdd/GherkinEditor/releases/tag/V1.0)
 
 
 
